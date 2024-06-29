@@ -1,0 +1,576 @@
+
+@import url(normalize.css);
+
+@font-face {
+    font-family: 'TTLakes-Bold';
+    src: url(fonts/TTLakes/TTLakes-Bold.woff2) format('woff2');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'TTLakes-Light';
+    src: url(fonts/TTLakes/TTLakes-Light.woff2) format('woff2');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'TTLakes-Medium';
+    src: url(fonts/TTLakes/TTLakes-Medium.woff2) format('woff2');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+body {
+    min-width: 320px;
+    width: auto; 
+    background-color:rgb(248, 248, 248);
+   }
+ 
+
+/*Скрытие элементов, предназначеных для screen-reader (взято с htmlacademy)*/
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    border: 0;
+    padding: 0;
+    white-space: nowrap;
+    clip-path: inset(100%);
+    clip: rect(0 0 0 0);
+    overflow: hidden;
+  }
+
+/*Глобальные класс для общих стилей круглых кнопок*/
+.button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 1px solid transparent;
+    background-color: rgb(255, 62, 121);
+    transition: background-color 0.2s; 
+}
+
+.header {
+    background-color: white;
+}
+
+/*Стили бургер-кнопки + полоски внутри кнопки*/
+.burger-button{
+    align-items: flex-start;
+    flex-direction: column;
+    row-gap: 5px;
+    padding: 10px 0 10px 10px; 
+}
+.burger-button__line {
+    width: 18px;
+    height: 2px;
+    border-radius: 1px;
+    background-color: white;
+}
+.burger-button__line:nth-child(2) {
+    width: 10px;
+}
+.burger-button__line:nth-child(3) {
+    width: 14px;
+}
+
+/*Разметка флекс-контейнеров с кнопками в шапке*/
+.header__container {
+    display:flex;
+    align-items: center;
+    column-gap: 16px;
+    margin-bottom: 24px;
+}
+.logo-cps {
+    flex-shrink: 0;
+    margin-right: auto;
+    border: 1px solid transparent;
+    display: flex;
+    align-items: center;
+}
+.action,
+.action-repair{
+    display:flex;
+    align-items: center;
+    column-gap: 16px;
+}
+/*Скрытие кнопок для мобильного устройства */
+.action--display-mobile--none {
+    display: none;
+}
+
+/*Отключение  кнопок-действий в шапке контентной части*/
+.action-repair--display-touch--none{
+    display: none;
+}
+/*Шрифт заголовка контентной части*/
+.content-header__title {
+    font-family: 'TTLakes-Bold';
+    color: rgb(27, 28, 33);
+    font-size: 28px;
+    line-height: 40px; 
+    letter-spacing: -0.6px;
+    text-align: left;
+    
+}
+/* Highlight перед заголовком шапки контентной части */
+.content-header__title--highlight--before::before {
+    content: '';
+    border-right: 4px solid rgb(65, 246, 215);
+    border-radius: 0 4px 4px 0;
+    margin-right: 12px;
+}
+
+
+/*Фоновые  базовые изображения у круглых кнопок*/
+.call-button{
+    background: rgb(255, 62, 121) url("icons/icon-call-white.svg") no-repeat center;   
+}
+.chat-button{
+    background: rgb(255, 62, 121) url("icons/icon-chat-white.svg") no-repeat center; 
+}
+.profile-button{
+    background: rgb(255, 62, 121) url("icons/icon-profile-white.svg") no-repeat center;
+}
+.repair-button{
+    background: rgb(255, 62, 121) url("icons/icon-repair-white.svg") no-repeat center; 
+}
+.checkstatus-button{
+    background: rgb(255, 62, 121) url("icons/icon-checkstatus-white.svg") no-repeat center;
+}
+
+/*Для keyboard-focusable + состояния кнопок в шапке*/
+.button:focus-visible,
+.logo-cps:focus-visible{  
+  outline: 4px solid rgb(51, 48, 207);
+}
+
+@media (hover: hover) {
+
+    .burger-button:hover{
+        background-color: rgb(154, 240, 243);
+        border-color: black;
+        .burger-button__line {
+        background-color: rgb(65, 134, 199);
+        } 
+    }
+    .logo-cps:hover {
+        background-color: rgb(154, 240, 243);
+        border: 1px solid black;
+    }
+    .call-button:hover{
+        background:rgb(154, 240, 243) url(icons/icon-call-blue.svg) no-repeat center;
+        border-color: black;
+    }
+    .chat-button:hover {
+        background:rgb(154, 240, 243) url(icons/icon-chat-blue.svg) no-repeat center;
+        border-color: black;
+    }
+    .profile-button:hover{
+        background:rgb(154, 240, 243) url(icons/icon-profile-blue.svg) no-repeat center;
+        border-color: black;
+    }
+    .repair-button:hover{
+        background:rgb(154, 240, 243) url(icons/icon-repair-blue.svg) no-repeat center;
+        border-color: black;
+        .repair-button__title {
+            color: rgb(65, 134, 199);
+        }
+    }
+    .checkstatus-button:hover{
+        background:rgb(154, 240, 243) url(icons/icon-checkstatus-blue.svg) no-repeat center;
+        border-color: black;
+        .checkstatus-button__title {
+            color: rgb(65, 134, 199);
+        }
+    }
+}
+
+@media (hover: none) or (min-width: 800px) {
+    
+    .burger-button:active{
+        background-color: rgb(65, 134, 199);
+        border-color:#D9FFF5;
+        .burger-button__line {
+        background-color: white;
+        } 
+    }
+    .logo-cps:active {
+        background-color: rgb(65, 134, 199);
+        border: 1px solid #D9FFF5;
+    }
+    .call-button:active{
+        background: rgb(65, 134, 199) url(icons/icon-call-white.svg) no-repeat center;
+        border-color: #D9FFF5;
+    }
+    .chat-button:active {
+        background:rgb(65, 134, 199) url(icons/icon-chat-white.svg) no-repeat center;
+        border-color: #D9FFF5;
+    }
+    .profile-button:active{
+        background:rgb(65, 134, 199)  url(icons/icon-profile-white.svg) no-repeat center;
+        border-color: #D9FFF5;
+    }
+    .repair-button:active{
+        background:rgb(65, 134, 199)  url(icons/icon-repair-white.svg) no-repeat center;
+        border-color: #D9FFF5;
+        .repair-button__title {
+            color: #D9FFF5;
+        }
+    }
+    .checkstatus-button:active{
+        background:rgb(65, 134, 199)  url(icons/icon-checkstatus-white.svg) no-repeat center;
+        border-color:#D9FFF5;
+        .checkstatus-button__title {
+            color: #D9FFF5;
+        }
+    }
+}
+/*Полоса разделитель между шакой и основной частью*/
+.header__container--shadow--after{     
+    border-bottom: 1px #D9FFF5 solid;
+}
+
+
+
+
+/*Разделитель перед правым блоком кнопок в шапке*/
+.action-repair--divider-before::before{
+    content: '';
+    border-left: 2px solid #EAEAEA;
+    border-radius: 1px;
+    height: 32px;
+    margin-right: 4px;
+    
+}
+/*Внутренние отступы в шапке*/
+.header__container {  
+    padding: 18px 16px;
+}
+
+/*Разметка списка навигации, скролл
++ добавил padding для корректного отображения рамки при keyboard-focusable  */
+.nav__list {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    overflow-x: scroll;
+    column-gap: 10px;
+    padding: 4px 14px;
+    margin: 0;
+    margin-bottom: 8px;
+   
+ }
+
+ /*Рамка для keyboard-focusable кнопок в навигации контентной части и читать далее*/
+ .nav-button:focus-visible,
+ .description__button:focus-visible{  
+    outline: 4px solid rgb(51, 48, 207);
+    border-radius: 6px;
+  }
+  
+/*Базовый стиль кнопок в навигации контентной части*/
+ .nav-button {
+    border: 2px solid transparent;
+    background-color: inherit;
+    padding-inline: 16px;
+    height: 40px;
+    width: auto;
+ }
+
+/*Шрифт текста кнопок навигации контентной части*/
+ .nav-button__title {
+    font-family: 'TTLakes-Medium';
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: -0.2px;
+    text-align: right;
+    white-space: nowrap;
+    color: rgb(126, 126, 130);
+ }
+
+
+/*Стили состояния кнопок навигации контентной части*/
+ @media (hover: hover) {
+    .nav-button:hover{
+        border: 2px solid rgb(184, 255, 236);
+        border-radius: 6px;
+        background: rgb(255, 255, 255);
+    
+        .nav-button__title{
+            color: rgb(65, 134, 199);
+            }
+    }
+    
+}
+@media (hover: none) or (min-width: 800px) {
+    .nav-button:active{
+        border: 2px solid rgb(184, 255, 236);
+        border-radius: 6px;
+        background: rgb(65, 134, 199);
+        .nav-button__title{
+            color: white;
+    }
+    }
+
+}
+/* Нижний отстут шапки контента */
+.content-header{
+    margin-bottom: 20px;
+}
+/* Разметка флекс контейнера с текстовой частью и изображением */
+.description {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+/* Разметка контейнера с текстом и кнопкой - читать далее */
+.description__container {
+    display: flex;
+    flex-direction: column;
+    row-gap: 14px;
+}
+/*Разметка флекс контейнера с текстовым контентом  */
+.description__text-wrapper {
+    height: 90px;
+    width: auto;
+    max-width: 550px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    margin: 0 16px;
+}
+.description__text {
+    font-family: 'TTLakes-Medium';
+    font-size: 14px;  
+    line-height: 18px; 
+    font-weight: 400;
+    letter-spacing: 0.1px;
+    color: rgb(27, 28, 33);
+}
+
+/* Стили кнопки читать далее */
+.description__button {
+    border: 4px solid transparent;
+    background-color: inherit;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    column-gap: 8px;
+    height: 30px;
+    width: 150px;
+    padding: 0;
+    margin-left: 10px;
+    margin-bottom: 12px;
+   
+}
+/* Декоративные стрелки перед кнопкой */
+.description__button--expand--before::before {
+    content: url(icons/expand.svg);
+}
+
+/* Оформление текста названия кнопки */
+.description__button-title {
+    font-family: "TTLakes-Medium";
+    color: rgb(27, 28, 33);
+    font-size: 16px;      
+    font-weight: 500;     
+    line-height: 24px;
+    letter-spacing: -0.2px;
+    text-align:left;
+    white-space: nowrap;
+    
+}
+
+/*Стили состояния кнопки читать далее*/
+@media (hover: hover) {
+    .description__button:hover{
+        .description__button-title {
+        color: rgb(65, 134, 199);
+        }
+    }
+    
+}
+@media (hover: none) or (min-width: 800px) {
+    
+    .description__button:active{
+        .description__button-title {
+        color: rgb(65, 134, 199);
+        }
+    }
+}
+
+.image__cps{
+    max-width: 100%;
+}
+/****************** МЕДИА ЗАПРОСЫ **************************/
+
+/*Экран планшет 768-1120*/
+
+@media (min-width: 768px) and (min-height: 504px){
+
+/*Внутренние отступы в шапке*/
+    .header__container {
+        padding-inline: 24px;
+        }  
+/*Подключение кнопок действий*/
+    .action{
+        display: flex;
+        }  
+/*Разделитель между бургер кнопкой и логотипом*/  
+    .logo-cps::before{
+        content: "";
+        border-left: 2px solid #EAEAEA;
+        border-radius: 1px; 
+        height: 32px; 
+        margin-right: 20px;
+        margin-left: 4px;
+        }
+
+/*Добавил места для улучшения визуального отображения
+     при изменении состояния ссылки. Как сделать по-другому не понял*/
+    .logo-cps{
+    padding-right: 26px;
+    }
+    /*Отступ разделителя правого блока кнопок в шапке*/
+    .action-repair--divider-before::before{
+        margin-left: 4px;
+    }
+    /* Изменение отступа highlight перед заголовком шапки контентной части */
+    .content-header__title--highlight--before::before {
+    margin-right: 20px;
+    }
+    /* Изменение нижнего отступа шапки контента  */
+    .content-header {
+        margin-bottom: 28px;
+    }
+    /* Изменение отступов списка навигации */
+    .nav__list {
+        padding-inline: 24px;
+        margin-bottom: 12px;
+    }
+    /* Разметка флекс контейнера с текстовой частью и изображением-
+    изменение направления */
+    .description {
+        flex-direction: row;
+        justify-content: center;
+        align-items: flex-start;
+        column-gap: 48px;
+        margin-inline: 24px ;
+    }
+    /*Флекс контейнер с текстовым контентом - изменение размеров*/
+.description__text-wrapper {
+    height: 160px;
+    width: 312px;
+    margin: 0;
+}
+/* Отступ между параграфами текстового контента */
+.description__text--margin--bottom {
+    margin-bottom: 32px;
+}
+    
+}
+
+/*Экран пк 1120-1600*/
+@media (min-width: 1120px) and (min-height: 535px){
+    
+    /*Разметка флекс контейнера шапки контентной части + 
+    изменение отступов*/
+    .content-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-right: 32px;
+        margin-top: 42px;
+        margin-bottom: 4px;
+}
+    /* Изменение отступа highlight перед заголовком шапки контентной части */
+    .content-header__title--highlight--before::before {
+        margin-right: 28px;
+}
+
+    /*Отключение шапки*/
+    .header{       
+        display: none;       
+    }
+    /*Подключение кнопок действий в шапке контентной части*/
+    .action-repair {
+        display: flex;
+    }
+    /*Отступы и шрифт для корректного отображения заголовка кнопок в шапке контентной части*/
+    .repair-button,
+    .checkstatus-button{
+        margin-left: 130px;
+    }
+    .repair-button__title, 
+    .checkstatus-button__title {
+        white-space: nowrap;
+        display: inline-block;
+        margin-right: 175px;
+        font-family: 'TTLakes-Medium';
+        font-size: 16px;
+        line-height: 24px;
+        letter-spacing: -0.2px;
+        text-align: left;
+    }
+    .repair-button__title{
+        margin-right: 185px;
+    }
+    
+    /* Убираю полосу горизонтального скролла +
+    изменение отступов */
+    .nav__list{
+        overflow-x: hidden;
+        flex-wrap: wrap;
+        column-gap: 0;
+        padding: 4px 30px 4px 32px;
+        margin-bottom: 16px;
+    }
+   
+        /*Флекс контейнер с текстовым контентом - изменение размеров*/
+    .description__text-wrapper {
+        width: 490px;
+    }
+        /* Разметка флекс контейнера с текстовой частью и изображением-
+    изменение отступов */
+    .description {
+        column-gap: 36px;
+        margin-inline: 32px ;
+    }
+    
+}
+
+@media (min-width: 1200px){
+
+    body{
+        max-width: 1600px;
+    }
+    .nav__list{
+        margin-bottom: 50px;
+    }
+    .content-header{
+        margin-bottom: 50px;
+    }
+}
+
+@media (min-width: 1600px){   
+    body{
+       margin: 0 auto;
+}
+
+.description{
+    column-gap: 150px;
+}
+.content-header {
+    padding-top: 150px;
+
+}
+}
