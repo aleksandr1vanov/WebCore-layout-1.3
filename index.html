@@ -8,83 +8,88 @@
 </head>
 <body>
 <header class="header">
-    <div class="header__container header__container--shadow--after">
-<button class="burger-button button"
-        type="button" title="Кнопка меню">
-    <span class="burger-button__line"></span>
-    <span class="burger-button__line"></span>
-    <span class="burger-button__line"></span>
-    <span class="burger-button__alt-text visually-hidden">Кнопка меню</span>
-</button>
-<a class="logo-cps" href="/">
-    <img class="logo-cps__image" 
-         src="./icons/logo-cps.svg"
-         alt="Логотип компании"
-         title="На главную"
-         width="96"
-         height="50">
-</a>
-<ul class="action action--display-mobile--none">
-    <li class="action__button">
-        <button class="call-button button" type="button" title="Заказать звонок"></button>
-    </li>
-    <li class="action__button">
-        <button class="chat-button button" type="button" title="Обратная связь"></button>
-    </li>
-    <li class="action__button">
-        <button class="profile-button button" type="button" title="Личный кабинет"></button>
-    </li>
-</ul>
-<ul class="action-repair action-repair--divider-before">
-    <li class="action-repair__button">
-        <button class="repair-button button" type="button" title="Заказать ремонт"></button>
-    </li>
-    <li class="action-repair__button">
-        <button class="checkstatus-button button" type="button" title="Статус ремонта"></button>
-    </li>
-</ul>
+    <div class="header__container">
+        <button class="burger-button burger-button--hover--blue-icon burger-button--active--white-icon button"
+                type="button" title="Кнопка меню">
+            <span class="burger-button__alt-text visually-hidden">Кнопка меню</span>
+        </button>
+        <a class="header__logo-cps logo-cps" href="/">
+            <img class="logo-cps__image" 
+                 src="./icons/logo-cps.svg"
+                 alt="Логотип компании"
+                 title="На главную"
+                 width="96"
+                 height="50">
+        </a>
+        <ul class="header__action header__action--display-mobile--none action">
+            <li class="action__button">
+                <button class="call-button call-button--hover--blue-icon call-button--active--white-icon button" 
+                        type="button" title="Заказать звонок"></button>
+            </li>
+            <li class="action__button">
+                <button class="chat-button chat-button--hover--blue-icon chat-button--active--white-icon button"
+                        type="button" title="Обратная связь"></button>
+            </li>
+            <li class="action__button">
+                <button class="profile-button profile-button--hover--blue-icon profile-button--active--white-icon button"
+                        type="button" title="Личный кабинет"></button>
+            </li>
+        </ul>
+        <ul class="header__action-repair action-repair">
+            <li class="action-repair__button">
+                <button class="repair-button repair-button--hover--blue-icon repair-button--active--white-icon button"
+                        type="button" title="Заказать ремонт"></button>
+            </li>
+            <li class="action-repair__button">
+                <button class="checkstatus-button checkstatus-button--hover--blue-icon checkstatus-button--active--white-icon button"
+                        type="button" title="Статус ремонта"></button>
+            </li>
+        </ul>
     </div>
 </header>
-<header class="content-header">
+<main class="content">
+<header class="content__header">
     <h1 class="visually-hidden">CPS – сервисный центр по ремонту техники</h1>
-    <h2 class="content-header__title content-header__title--highlight--before">Услуги и сервисы</h2>
-    <ul class="action-repair action-repair--display-touch--none">
+    <h2 class="content__header-title">Услуги и сервисы</h2>
+    <ul class="content__action-repair content__action-repair--display-touch--none action-repair">
         <li class="action-repair__button">
-            <button class="repair-button button" type="button">
+            <button class="repair-button repair-button--hover--blue-icon repair-button--active--white-icon button"
+                    type="button">
                 <span class="repair-button__title">Заказать ремонт</span>
             </button>
         </li>
         <li class="action-repair__button">
-            <button class="checkstatus-button button" type="button">
+            <button class="checkstatus-button checkstatus-button--hover--blue-icon checkstatus-button--active--white-icon button"
+                    type="button">
                 <span class="checkstatus-button__title">Статус ремонта</span> 
             </button>
         </li>
     </ul>
 </header>
-    <nav class="nav">
+    <nav class="content__nav nav">
         <ul class="nav__list">  
-            <li class="nav__item">
-                <button class="nav-button" type="button"><span class="nav-button__title">Ремонтируемые устройства</span></button>
+            <li class="nav__item"> 
+                <button class="nav__button" type="button"><span class="nav__button-title">Ремонтируемые устройства</span></button>
             </li>
             <li class="nav__item">
-                <button class="nav-button" type="button"><span class="nav-button__title">Дополнительные услуги</span></button>
+                <button class="nav__button" type="button"><span class="nav__button-title">Дополнительные услуги</span></button>
             </li>
             <li class="nav__item">
-                <button class="nav-button" type="button"><span class="nav-button__title">Цены на услуги</span></button>
+                <button class="nav__button" type="button"><span class="nav__button-title">Цены на услуги</span></button>
             </li>
             <li class="nav__item">
-                <button class="nav-button" type="button"><span class="nav-button__title">Адреса сервисных центров</span></button>
+                <button class="nav__button" type="button"><span class="nav__button-title">Адреса сервисных центров</span></button>
             </li>
             <li class="nav__item">
-                <button class="nav-button" type="button"><span class="nav-button__title">Специальные цены</span></button>
+                <button class="nav__button" type="button"><span class="nav__button-title">Специальные цены</span></button>
             </li>
             <li class="nav__item">
-                <button class="nav-button" type="button"><span class="nav-button__title">Отзывы</span></button>
+                <button class="nav__button" type="button"><span class="nav__button-title">Отзывы</span></button>
             </li>
         </ul>
     </nav>
-    <main class="description">
-        <article class="description__container">
+    <article class="content__description description">
+        <div class="description__container">
             <h3 class="visually-hidden">О компании</h3>
             <div class="description__text-wrapper">
                 <p class="description__text description__text--margin--bottom">
@@ -99,13 +104,14 @@
                     советуют нас родным и близким.
                 </p>
             </div>
-            <button class="description__button description__button--expand--before " type="button">
+            <button class="description__button" type="button">
                 <span class="description__button-title">Читать далее</span>
             </button>
-        </article>
+        </div>
         <figure class="image">
             <img class="image__cps" src="images/cpsimg.jpg" alt="">
         </figure>
-    </main>
+    </article>
+</main>
 </body>
 </html>
